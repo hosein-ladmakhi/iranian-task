@@ -1,7 +1,7 @@
-import { ReactNode, SyntheticEvent } from 'react';
-import { TabContext, TabList } from '@mui/lab';
-import { Tab as MuiTab } from '@mui/material';
-import { TabItems } from '@/@types/tab';
+import { ReactNode, SyntheticEvent } from "react";
+import { TabContext, TabList } from "@mui/lab";
+import { Tab as MuiTab } from "@mui/material";
+import { TabItems } from "@/@types";
 
 interface Props {
   onChangeTabs: (activeTab: string) => void;
@@ -21,11 +21,7 @@ export default function Tab({
   };
   return (
     <TabContext value={activeTab}>
-      <TabList
-        centered
-        onChange={handleOnChange}
-        aria-label="lab API tabs example"
-      >
+      <TabList centered onChange={handleOnChange}>
         {items.map((item) => (
           <MuiTab key={item.id} label={item.text} value={item.id} />
         ))}

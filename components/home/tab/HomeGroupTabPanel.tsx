@@ -1,52 +1,71 @@
-import SummarizedCaption from '@/shared/SummarizedCaption';
+import { Users } from "@/@types";
+import { GREY_COLOR } from "@/constants";
 import {
   Avatar,
-  Box,
-  Chip,
   List,
   ListItem,
   ListItemAvatar,
   ListItemButton,
   ListItemText,
   Typography,
-  colors,
-} from '@mui/material';
+} from "@mui/material";
 
-export default function HomeGroupTabPanel() {
+// define props type
+
+interface Props {
+  users: Users;
+}
+
+export default function HomeGroupTabPanel({ users }: Props) {
   return (
     <List>
-      {new Array(20).fill(0).map(() => (
-        <ListItem disablePadding divider>
+      {users.map((user) => (
+        <ListItem key={user.id} disablePadding divider>
           <ListItemButton>
             <ListItemAvatar>
-              <Avatar />
+              <Avatar src={user.avatar} />
             </ListItemAvatar>
             <ListItemText
               primary={
                 <Typography component="h2" variant="body2" fontWeight="bold">
-                  حسین لادمخی نژاد
+                  {user.first_name} {user.last_name}
                 </Typography>
               }
               secondary={
-                <SummarizedCaption text="حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال, حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال, حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال" />
+                <Typography
+                  component="h2"
+                  variant="caption"
+                  color={GREY_COLOR[500]}
+                >
+                  {user.email}
+                </Typography>
               }
             />
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Chip label="1" color="secondary" size="small" />
-              <Typography
-                color={colors.grey[600]}
-                mt={1}
-                variant="caption"
-                component="span"
-              >
-                11:45
-              </Typography>
-            </Box>
+          </ListItemButton>
+        </ListItem>
+      ))}
+      {users.map((user) => (
+        <ListItem disablePadding divider>
+          <ListItemButton>
+            <ListItemAvatar>
+              <Avatar src={user.avatar} />
+            </ListItemAvatar>
+            <ListItemText
+              primary={
+                <Typography component="h2" variant="body2" fontWeight="bold">
+                  {user.first_name} {user.last_name}
+                </Typography>
+              }
+              secondary={
+                <Typography
+                  component="h2"
+                  variant="caption"
+                  color={GREY_COLOR[500]}
+                >
+                  {user.email}
+                </Typography>
+              }
+            />
           </ListItemButton>
         </ListItem>
       ))}

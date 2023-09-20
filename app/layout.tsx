@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import AppThemeProvider from '@/core/theme/AppThemeProvider';
+import { ReactNode } from "react";
+import MainLayout from "@/shared/MainLayout";
+import { AppThemeProvider } from "@/core/theme";
 
 interface Props {
   children: ReactNode;
@@ -10,7 +11,9 @@ export default function RootLayout({ children }: Props) {
     <html dir="rtl">
       <head></head>
       <body>
-        <AppThemeProvider>{children}</AppThemeProvider>
+        <AppThemeProvider>
+          <MainLayout>{children}</MainLayout>
+        </AppThemeProvider>
       </body>
     </html>
   );

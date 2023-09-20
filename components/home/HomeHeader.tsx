@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import { Box, IconButton, Typography } from '@mui/material';
-import { Search as SearchIcon, Menu as MenuIcon } from '@mui/icons-material';
-import styled from '@emotion/styled';
+import { Box, IconButton, Typography } from "@mui/material";
+import styled from "@emotion/styled";
+import { MenuIcon, SearchIcon } from "@/constants";
 
 const Header = styled(Box)(() => ({
   paddingBlock: 2,
   marginBottom: 1,
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  width: "100%",
 }));
 
 export default function HomeHeader() {
