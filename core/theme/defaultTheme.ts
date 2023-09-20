@@ -5,4 +5,5 @@ const inter = Vazirmatn({ subsets: ['latin'] });
 
 export const defaultTheme = createTheme({
   typography: { fontFamily: inter.style.fontFamily },
+  direction: 'rtl',
 });

@@ -7,7 +7,7 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html>
+    <html dir="rtl">
       <head></head>
       <body>
         <AppThemeProvider>{children}</AppThemeProvider>
