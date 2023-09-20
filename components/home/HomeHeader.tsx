@@ -1,16 +1,20 @@
+'use client';
+
 import { Box, IconButton, Typography } from '@mui/material';
 import { Search as SearchIcon, Menu as MenuIcon } from '@mui/icons-material';
+import styled from '@emotion/styled';
+
+const Header = styled(Box)(() => ({
+  paddingBlock: 2,
+  marginBottom: 1,
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+}));
 
 export default function HomeHeader() {
   return (
-    <Box
-      py={2}
-      borderBottom="1px solid red"
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      mb={2}
-    >
+    <Header>
       <IconButton>
         <SearchIcon />
       </IconButton>
@@ -20,6 +24,6 @@ export default function HomeHeader() {
       <IconButton>
         <MenuIcon />
       </IconButton>
-    </Box>
+    </Header>
   );
 }

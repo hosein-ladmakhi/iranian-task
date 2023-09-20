@@ -21,7 +21,11 @@ export default function Tab({
   };
   return (
     <TabContext value={activeTab}>
-      <TabList onChange={handleOnChange} aria-label="lab API tabs example">
+      <TabList
+        centered
+        onChange={handleOnChange}
+        aria-label="lab API tabs example"
+      >
         {items.map((item) => (
           <MuiTab key={item.id} label={item.text} value={item.id} />
         ))}

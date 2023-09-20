@@ -1,3 +1,4 @@
+import { GetUsersResponse } from '@/@types/user';
 import { API_URL } from '@/constants';
 
 export const httpGetClient = <T>(url: string, cache?: RequestCache) => {
@@ -6,7 +7,7 @@ export const httpGetClient = <T>(url: string, cache?: RequestCache) => {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
     cache,
-  }) as Promise<T>;
+  }).then((res) => res.json()) as Promise<GetUsersResponse>;
 };
 
 export const httpPostClient = <T, Y>(url: string, body: Y) => {
