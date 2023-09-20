@@ -1,3 +1,4 @@
+import SummarizedCaption from '@/shared/SummarizedCaption';
 import {
   Avatar,
   Box,
@@ -8,6 +9,7 @@ import {
   ListItemButton,
   ListItemText,
   Typography,
+  colors,
 } from '@mui/material';
 
 export default function HomeGroupTabPanel() {
@@ -20,11 +22,13 @@ export default function HomeGroupTabPanel() {
               <Avatar />
             </ListItemAvatar>
             <ListItemText
-              primary="حسین لادمخی نژاد"
-              secondary={
-                <Typography variant="caption" component="p">
-                  حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال
+              primary={
+                <Typography component="h2" variant="body2" fontWeight="bold">
+                  حسین لادمخی نژاد
                 </Typography>
+              }
+              secondary={
+                <SummarizedCaption text="حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال, حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال, حسین لادمخی نژاد برنامه نویس فرانت برای چندین سال" />
               }
             />
             <Box
@@ -34,7 +38,12 @@ export default function HomeGroupTabPanel() {
               justifyContent="center"
             >
               <Chip label="1" color="secondary" size="small" />
-              <Typography variant="caption" component="span">
+              <Typography
+                color={colors.grey[600]}
+                mt={1}
+                variant="caption"
+                component="span"
+              >
                 11:45
               </Typography>
             </Box>

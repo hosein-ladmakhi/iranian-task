@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { TabPanel } from '@mui/lab';
 
-import Tab from '@/shared/tab';
+import Tab from '@/shared/Tab';
 
 // Tab Panels
 import HomeGroupTabPanel from './tab/HomeGroupTabPanel';
